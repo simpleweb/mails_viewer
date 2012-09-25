@@ -93,7 +93,7 @@ storing them in the file system by specifying which mails to sent:</p>
     <span class="n">authentication</span><span class="p">:</span>       <span class="kp">nil</span><span class="p">,</span>
     <span class="n">enable_starttls_auto</span><span class="p">:</span> <span class="kp">true</span>
   <span class="p">},</span>
-  <span class="n">send_if</span><span class="p">:</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">mail</span><span class="o">|</span> <span class="n">mail</span><span class="o">.</span><span class="n">destinations</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">address</span><span class="o">|</span> <span class="o">[</span><span class="s2">"yedingding@gmail.com"</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">any?</span>
+  <span class="n">send_if</span><span class="p">:</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">mail</span><span class="o">|</span> <span class="n">mail</span><span class="o">.</span><span class="n">destinations</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">address</span><span class="o">|</span> <span class="o">[</span><span class="s2">"yedingding@gmail.com"</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">any?</span> <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -114,6 +114,6 @@ filesystem for you to browse later, but also send out to his inbox.</p>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
   </body>
 </html>
