@@ -10,8 +10,16 @@
 
   <div class="container">
     <div id="list">
-      <table class="tablesorter">
-        <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></thead>
+      <table id="mails" class="tablesorter">
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
         <tbody>
           <% @mails.each do |mail, filename| %>
             <tr class="mail">
@@ -19,6 +27,9 @@
               <td><%= mail.to.join(', ') %></td>
               <td>
                 <%= mail.subject %>
+              </td>
+              <td><%= mail.date.to_s(:long) %></td>
+              <td>
                 <% if mail.html_part || mail.content_type =~ /html/ %>
                   <a href="<%= email_path(filename, :html) %>" class="html preview">html</a>
                 <% end %>
@@ -31,33 +42,17 @@
                 <% end %>
                 <a href="<%= email_path(filename, :raw) %>" class="raw">raw</a>
               </td>
-              <td><%= mail.date.to_s(:long) %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
 
-      <div id="pager" class="pager">
-        <form>
-          <input type="text" class="pagedisplay"/>
-          <select class="pagesize">
-            <option selected="selected"  value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option  value="40">40</option>
-          </select>
-          <img src="/assets/tablesorter/first.png" class="first"/>
-          <img src="/assets/tablesorter/prev.png" class="prev"/>
-          <img src="/assets/tablesorter/next.png" class="next"/>
-          <img src="/assets/tablesorter/last.png" class="last"/>
-        </form>
-      </div>
-    </div>
+       <pre id='raw'>
+        <h3>Click link above to view original email content here!</h3>
+        <div></div>
+      </pre>
 
-    <pre id='raw'>
-      <h3>Click link above to view original email content here!</h3>
-      <div></div>
-    </pre>
+    </div>
   </div>
 </body>
 </html>
