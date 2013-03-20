@@ -3,12 +3,11 @@
 //= require_tree .
 
 $(function() {
-  $(document).on('click', '.mail a.preview', function() {
-    console.log(this);
+  $('body').on('click', 'a.preview', function() {
     $(this).colorbox({width:"80%", height:"80%", iframe:true});
   });
 
-  $(document).on('click', '.mail a.raw', function(){
+  $('body').on('click', 'a.raw', function(){
     $.get($(this).attr('href'), function(data){
       $('#raw div').text(data);
     });
@@ -26,4 +25,5 @@ $(function() {
     ]
   });
 
+  
 });
