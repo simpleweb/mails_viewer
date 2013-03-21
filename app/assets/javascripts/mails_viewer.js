@@ -3,18 +3,19 @@
 //= require_tree .
 
 $(function() {
-  $('body').on('click', 'a.preview', function() {
+  $('#mails').on('click', 'a.preview', function() {
     $(this).colorbox({width:"80%", height:"80%", iframe:true});
   });
 
-  $('body').on('click', 'a.raw', function(){
-    $.get($(this).attr('href'), function(data){
+  $('#mails').on('click', 'a.raw', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $.get($(this).attr('href'), function(data) {
       $('#raw div').text(data);
     });
-    return false;
   });
 
-  $("table").dataTable({
+  $("#mails").dataTable({
     "aaSorting": [[3, "desc"]],
     "aoColumns": [
       null,
