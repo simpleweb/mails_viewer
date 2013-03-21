@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", ">= 3.1.0"
+  s.add_dependency "jquery-rails", ">= 2.2.1"
+  s.add_dependency "jquery-datatables-rails"
   s.add_development_dependency "mail", '~> 2.4.0'
   s.add_development_dependency 'rspec', '~> 2.11.0'
 end
