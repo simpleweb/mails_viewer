@@ -5,10 +5,14 @@ module MailsViewer
     before_filter :find_absolute_filename, only: [:raw, :html, :attachment, :plain]
 
     def index
-      Dir.chdir(mails_path) do
-        @mails = Dir["**/*"]
-          .select{|f| File.file?(f)}
-          .map{|f| [Mail.read(f), f]}
+      if File.exist?(mails_path)
+        Dir.chdir(mails_path) do
+          @mails = Dir["**/*"]
+            .select{|f| File.file?(f)}
+            .map{|f| [Mail.read(f), f]}
+        end
+      else
+        @mails = []
       end
     end
 
