@@ -15,6 +15,7 @@
           <tr>
             <th>From</th>
             <th>To</th>
+            <th>CC</th>
             <th>Subject</th>
             <th>Date</th>
             <th></th>
@@ -25,6 +26,7 @@
             <tr class="mail">
               <td><%= mail.from.join(', ') %></td>
               <td><%= mail.to.join(', ') %></td>
+              <td><%= mail.cc.try(:join, ', ')%></td>
               <td>
                 <%= mail.subject %>
               </td>
