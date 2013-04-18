@@ -16,8 +16,9 @@ $(function() {
   });
 
   $("#mails").dataTable({
-    "aaSorting": [[3, "desc"]],
+    "aaSorting": [[4, "desc"]],
     "aoColumns": [
+      null,
       null,
       null,
       null,
@@ -26,5 +27,5 @@ $(function() {
     ]
   });
 
-  
+
 });
